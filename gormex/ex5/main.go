@@ -79,7 +79,7 @@ func main() {
 	}
 	db.Create(&u2)
 	var userbase UserBase
-	db.Find(&userbase, "2")
+	db.Find(&userbase, 2)
 	var cars []Carrer
 	db.Model(&userbase).Related(&cars, "Carrers")
 	fmt.Println(userbase)
