@@ -7,7 +7,7 @@ import (
 
 func main() {
 	rdb := redis.NewClient(&redis.Options{
-		Addr:     "125.27.239.127:6379",              // 使用默认数据库
+		Addr:     "120.27.239.127:6379",              // 使用默认数据库
 		Password: "962012d09b8170d912f0669f6d7d9d07", // 没有密码则置空
 		DB:       0,                                  // 使用默认的数据库
 	})
@@ -33,7 +33,7 @@ func main() {
 
 	// 处理消息
 	for msg := range ch {
-		log.Println(msg.Channel, ":", msg.Payload)
+		log.Println(msg.Channel, ":", msg.Payload) //__keyevent@0__:expired : mykey1   // __keyevent@0__:expired : mykey2
 	}
 
 }
